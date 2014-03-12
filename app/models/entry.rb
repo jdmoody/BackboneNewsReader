@@ -1,5 +1,4 @@
 class Entry < ActiveRecord::Base
-  attr_accessible :guid, :link, :published_at, :title, :json, :feed_id
 
   belongs_to :feed
 
