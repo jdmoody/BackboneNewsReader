@@ -8,7 +8,7 @@ class Feed < ActiveRecord::Base
     return feed if feed
 
     begin
-      feed_data = SimpleRSS.parse(HTMLEntities.new.decode(open(url)))
+      feed_data = SimpleRSS.parse(open(url))
       feed = Feed.create!(title: feed_data.title, url: url)
       feed_data.entries.each do |entry_data|
         Entry.create_from_json!(entry_data, feed)
@@ -24,7 +24,7 @@ class Feed < ActiveRecord::Base
     # reloads entries
     self.touch #this causes the updated_at column to be updated
     begin
-      feed_data = SimpleRSS.parse(HTMLEntities.new.decode(open(url)))
+      feed_data = SimpleRSS.parse(open(url))
       existing_entry_guids = Entry.pluck(:guid).sort
       feed_data.entries.each do |entry_data|
         unless existing_entry_guids.include?(entry_data.guid)
