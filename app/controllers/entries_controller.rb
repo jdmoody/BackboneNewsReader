@@ -6,6 +6,7 @@ class EntriesController < ApplicationController
 
   def index
     feed = Feed.find(params[:feed_id])
+    # feed.updated_at < 2.minutes.ago, feed.reload
     render :json => feed.entries
   end
 

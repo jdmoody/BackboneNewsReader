@@ -5,7 +5,7 @@ window.NewReader = {
   Routers: {},
   initialize: function() {
     var router = new NewReader.Routers.NewRouter();
-    Backbone.history.start({trigger: true});
+    Backbone.history.start({ trigger: true });
   }
 };
 

@@ -55,3 +55,5 @@ group :development do
 end
 
 gem 'backbone-on-rails'
+gem 'bootstrap-sass'
+gem 'htmlentities'

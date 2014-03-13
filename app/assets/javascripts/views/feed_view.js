@@ -1,4 +1,9 @@
 window.NewReader.Views.FeedView = Backbone.View.extend({
+  initialize: function (options){
+    this.listenTo(this.model, "all", this.render);
+    // setInterval(this.refreshFeed.bind(this), 500);
+  },
+
   template: JST["feeds/show"],
 
   events: {
@@ -6,12 +11,10 @@ window.NewReader.Views.FeedView = Backbone.View.extend({
   },
 
   refreshFeed: function () {
+    console.log("refreshing!")
+    console.log(this.model.entries().length);
     var that = this;
-    this.model.fetch({
-      success: function () {
-        that.render();
-      }
-    })
+    this.model.fetch()
   },
 
   render: function () {

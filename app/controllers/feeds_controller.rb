@@ -17,7 +17,7 @@ class FeedsController < ApplicationController
     end
   end
 
-  def create
+  def create 
     feed = Feed.find_or_create_by_url(feed_params[:url])
     if feed
       render :json => feed

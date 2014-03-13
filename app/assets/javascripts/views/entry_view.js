@@ -1,5 +1,5 @@
 window.NewReader.Views.EntryView = Backbone.View.extend({
-  template:JST["entries/show"],
+  template: JST["entries/show"],
 
   render: function() {
     var renderedContent = this.template({
@@ -8,6 +8,4 @@ window.NewReader.Views.EntryView = Backbone.View.extend({
     this.$el.html(renderedContent);
     return this;
   }
-
-
-})
+});

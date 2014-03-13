@@ -1,5 +1,4 @@
 class Entry < ActiveRecord::Base
-
   belongs_to :feed
 
   def self.create_from_json!(entryData, feed)

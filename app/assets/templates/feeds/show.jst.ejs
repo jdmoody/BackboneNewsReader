@@ -1,6 +1,7 @@
 <h1><%= feed.get("title") %></h1>
 <button id="refresh-button">Refresh</button>
 <ol>
+  <% debugger %>
   <% feed.entries().each(function (entry) { %>
       <li><a href="#/entries/<%= entry.get("id") %>"><%= entry.get("title") %></li>
   <% }) %>

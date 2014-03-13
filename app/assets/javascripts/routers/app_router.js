@@ -23,11 +23,12 @@ window.NewReader.Routers.NewRouter = Backbone.Router.extend({
       collection: NewReader.Collections.feeds
     });
     var that = this;
-    NewReader.Collections.feeds.fetch({
-      success: function () {
-        that._swapView(indexView);
-      }
-    });
+    NewReader.Collections.feeds.fetch();//{
+      // success: function () {
+//         that._swapView(indexView);
+//       }
+//     });
+    that._swapView(indexView);
   },
 
   feedShow: function (id) {
@@ -36,11 +37,12 @@ window.NewReader.Routers.NewRouter = Backbone.Router.extend({
       model: feed
     })
     var that = this;
-    feed.fetch({
-      success: function () {
-        that._swapView(showView);
-      }
-    })
+    feed.fetch();//{
+      // success: function () {
+ //        that._swapView(showView);
+ //      }
+ //    });
+    this._swapView(showView);
   },
 
   _swapView: function(newView) {
