@@ -1,12 +1,5 @@
-# Welcome to News Reader Demo
+# News Reader
 
-* bundle install
-* rake db:migrate
-* rake db:seed
-
-Three feeds with their entries will be created upon running `rake
-db:seed`.
-
-Good luck. Have fun.
-
-
+## Description
+This simple app allows a user to add many RSS feeds and view submissions to these feeds.
+New submissions are automatically fetched using AJAX requests and a timer.
